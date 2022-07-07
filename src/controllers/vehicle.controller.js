@@ -1,11 +1,14 @@
 const db = require("../config/database");
 
 const getVehicle = async (req, res) => {
-  res.send("getVehicle");
   const response = await db.query(
-    "SELECT * FROM vehicles"
+    "SELECT * FROM vehicles ORDER BY nid ASC"
   );
-  console.log(response.rows)
+  try {
+    res.status(200).json(response.rows);
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 module.exports = {
