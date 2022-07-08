@@ -1,6 +1,6 @@
 const db = require("../config/database");
 
-const getVehicle = async (req, res) => {
+const getVehicles = async (req, res) => {
   const response = await db.query(
     "SELECT * FROM vehicles ORDER BY nid ASC"
   );
@@ -12,5 +12,5 @@ const getVehicle = async (req, res) => {
 }
 
 module.exports = {
-  getVehicle
+  getVehicles
 }

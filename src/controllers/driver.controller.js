@@ -1,6 +1,6 @@
 const db = require("../config/database");
 
-const getDriver = async (req, res) => {
+const getDrivers = async (req, res) => {
   const response = await db.query(
     "SELECT * FROM drivers ORDER BY nid ASC"
   );
@@ -12,5 +12,5 @@ const getDriver = async (req, res) => {
 }
 
 module.exports = {
-  getDriver
+  getDrivers
 }

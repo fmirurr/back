@@ -1,13 +1,16 @@
 const { Router } = require("express");
 const router = Router();
 
-const { getVehicle } = require("../controllers/vehicle.controller");
-const { getDriver } = require("../controllers/driver.controller");
-
-// Vehicle
-router.get("/vehicle", getVehicle)
+const { getDrivers } = require("../controllers/driver.controller");
+const { getRoutes } = require("../controllers/route.controller");
+const { getVehicles } = require("../controllers/vehicle.controller");
 
 // Driver
-router.get("/driver", getDriver)
+router.get("/drivers", getDrivers)
 
+// Routes
+router.get("/routes", getRoutes)
+
+// Vehicle
+router.get("/vehicles", getVehicles)
 module.exports = router;
